@@ -607,7 +607,7 @@ do
                 # Resize $REAL_ROOT to fit the virtual drive
 		echo "Resizing $REAL_ROOT to fit the virtual drive"
                 /bin/growpart -v --fudge 20480 /dev/vda 1
-		e2fsck -f /dev/vda1
+		e2fsck -f -y /dev/vda1
 		resize2fs /dev/vda1
 
 		good_msg "Mounting $REAL_ROOT as root..."
